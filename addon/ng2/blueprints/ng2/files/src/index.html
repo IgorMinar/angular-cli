@@ -6,7 +6,7 @@
   <base href="/">
   {{content-for 'head'}}
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  
+
   <!-- Service worker support is disabled by default.
        Install the worker script and uncomment to enable.
        Only enable service workers in production.
@@ -38,11 +38,12 @@
       packages: {
         app: {
           format: 'register',
-          defaultExtension: 'js'
+          defaultExtension: 'js',
+          main: 'index'
         }
       }
     });
-    System.import('app.js').then(null, console.error.bind(console));
+    System.import('app');
   </script>
 </body>
 </html>
